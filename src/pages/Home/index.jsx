@@ -1,0 +1,32 @@
+import React, { useEffect } from "react";
+// Animations
+import { motion } from "framer-motion";
+import { pageAnimation } from "../../animation";
+
+// Page components
+import AboutSection from "./components/AboutSection";
+import FaqSection from "../../components/FaqSection";
+import ServicesSection from "../../components/ServicesSection";
+import ScrollTop from "../../components/ScrollTop";
+import { useDispatch, useSelector } from "react-redux";
+import { loadNews } from "../../actions/newsAction";
+
+const Home = () => {
+  return (
+    <>
+      <ScrollTop />
+      <motion.div
+        variants={pageAnimation}
+        initial="hidden"
+        animate="show"
+        exit="exit"
+      >
+        <AboutSection />
+        <ServicesSection />
+        <FaqSection />
+      </motion.div>
+    </>
+  );
+};
+
+export default Home;
