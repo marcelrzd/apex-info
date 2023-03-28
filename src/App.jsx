@@ -2,10 +2,11 @@ import React from "react";
 
 // pages
 import Home from "./pages/Home";
-import Contact from "./pages/Contact";
+import About from "./pages/About";
 import OurWork from "./pages/OurWork";
 import MovieDetail from "./pages/MovieDetail";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 // Global Style
 import GlobalStyle from "./components/GlobalStyle";
@@ -27,8 +28,9 @@ function App() {
           <Route path="/home" exact element={<Home />} />
           <Route path="/work" exact element={<OurWork />} />
           <Route path="/work/:id" exact element={<MovieDetail />} />
-          <Route path="/contact" exact element={<Contact />} />
+          <Route path="/about" exact element={<About />} />
         </Routes>
+        <Footer />
       </AnimatePresence>
     </div>
   );

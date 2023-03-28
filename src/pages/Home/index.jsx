@@ -1,15 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 // Animations
 import { motion } from "framer-motion";
 import { pageAnimation } from "../../animation";
 
 // Page components
-import AboutSection from "./components/AboutSection";
-import FaqSection from "../../components/FaqSection";
-import ServicesSection from "../../components/ServicesSection";
+import NewsSection from "./components/NewsSection";
+
 import ScrollTop from "../../components/ScrollTop";
-import { useDispatch, useSelector } from "react-redux";
-import { loadNews } from "../../actions/newsAction";
 
 const Home = () => {
   return (
@@ -21,9 +18,7 @@ const Home = () => {
         animate="show"
         exit="exit"
       >
-        <AboutSection />
-        <ServicesSection />
-        <FaqSection />
+        <NewsSection />
       </motion.div>
     </>
   );
