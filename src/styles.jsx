@@ -31,7 +31,7 @@ export const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 10rem;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   z-index: 10;
   /* background: #282828; */
@@ -39,9 +39,12 @@ export const StyledNav = styled.nav`
   .line-mobile {
     width: 100% !important;
   }
-  .link {
+  .link,
+  a,
+  span {
     color: white;
     text-decoration: none;
+    cursor: pointer;
   }
   ul {
     display: flex;
@@ -55,6 +58,26 @@ export const StyledNav = styled.nav`
   li {
     padding-left: 10rem;
     position: relative;
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 1rem;
+    left: -20px;
+    /* background-color: #d92929; */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .dropdown-menu li a {
+    transition: color 0.5s ease;
+  }
+  .dropdown-menu li a:hover {
+    color: #d92929;
+    transition: color 0.5s ease;
+  }
+
+  .dropdown-menu li {
+    margin-bottom: 10px;
   }
   @media (max-width: 1300px) {
     flex-direction: column;

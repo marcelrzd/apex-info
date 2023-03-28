@@ -5,7 +5,11 @@ import { useLocation } from "react-router-dom";
 import logo from "../img/apex-white-nav-logo.svg";
 import { StyledNav, Line } from "../styles";
 
-const Nav = () => {
+// fontawesome icons
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const Navbar = () => {
   const { pathname } = useLocation();
 
   const [pageWidth, setPageWidth] = useState(window.innerWidth);
@@ -22,6 +26,19 @@ const Nav = () => {
   }, []);
   const LineClass = pageWidth < 1300 ? "line-mobile" : "";
 
+  // dropdown
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [dropDownIcon, setDropDownIcon] = useState(faChevronDown);
+
+  const handleDropdown = () => {
+    setShowDropdown(!showDropdown);
+    if (showDropdown === false) {
+      setDropDownIcon(faChevronUp);
+    } else {
+      setDropDownIcon(faChevronDown);
+    }
+  };
+
   return (
     <StyledNav>
       <h1>
@@ -32,7 +49,7 @@ const Nav = () => {
       <ul>
         <li>
           <Link className="link" to="/home">
-            Home
+            News
           </Link>
           <Line
             transition={{ duration: 0.75 }}
@@ -40,15 +57,20 @@ const Nav = () => {
             animate={{ width: pathname === "/home" ? "50%" : "0%" }}
           />
         </li>
-        <li>
-          <Link className="link" to="/work">
-            Rotations
-          </Link>
-          <Line
-            transition={{ duration: 0.75 }}
-            initial={{ width: "0%" }}
-            animate={{ width: pathname === "/work" ? "50%" : "0%" }}
-          />
+        <li className="dropdown">
+          <span onClick={handleDropdown}>
+            In Rotation <FontAwesomeIcon icon={dropDownIcon} />
+          </span>
+          {showDropdown && (
+            <ul className="dropdown-menu">
+              <li>
+                <a href="#">Map</a>
+              </li>
+              <li>
+                <a href="#">Crafting</a>
+              </li>
+            </ul>
+          )}
         </li>
         <li>
           <Link className="link" to="/about">
@@ -66,4 +88,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navbar;
