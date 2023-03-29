@@ -3,7 +3,8 @@ import React from "react";
 // pages
 import Home from "./pages/Home";
 import About from "./pages/About";
-import OurWork from "./pages/OurWork";
+import MapRotation from "./pages/MapRotation";
+import CraftingRotation from "./pages/CraftingRotation";
 import MovieDetail from "./pages/MovieDetail";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -26,7 +27,12 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route path="/" exact element={<Home />} />
           <Route path="/home" exact element={<Home />} />
-          <Route path="/work" exact element={<OurWork />} />
+          <Route path="/rotation/map" exact element={<MapRotation />} />
+          <Route
+            path="/rotation/crafting"
+            exact
+            element={<CraftingRotation />}
+          />
           <Route path="/work/:id" exact element={<MovieDetail />} />
           <Route path="/about" exact element={<About />} />
         </Routes>

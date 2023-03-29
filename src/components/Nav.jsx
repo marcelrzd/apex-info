@@ -64,10 +64,14 @@ const Navbar = () => {
           {showDropdown && (
             <ul className="dropdown-menu">
               <li>
-                <a href="#">Map</a>
+                <Link className="link" to="/rotation/map">
+                  Map
+                </Link>
               </li>
               <li>
-                <a href="#">Crafting</a>
+                <Link className="link" to="/rotation/crafting">
+                  Crafting
+                </Link>
               </li>
             </ul>
           )}

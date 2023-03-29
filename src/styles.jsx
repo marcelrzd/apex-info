@@ -7,7 +7,7 @@ export const Hide = styled.div`
 `;
 
 // Footer
-export const StyledFooter = styled.footer`
+export const StyledFooter = styled(motion.footer)`
   min-height: 3vh;
   display: flex;
   margin: auto;
