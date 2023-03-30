@@ -34,7 +34,7 @@ export const StyledNav = styled.nav`
   /* position: sticky; */
   top: 0;
   z-index: 10;
-  /* background: #282828; */
+  font-family: "Bebas Neue", sans-serif;
   background: rgb(27, 27, 27);
   .line-mobile {
     width: 100% !important;
@@ -42,6 +42,7 @@ export const StyledNav = styled.nav`
   .link,
   a,
   span {
+    font-size: 1.5rem;
     color: white;
     text-decoration: none;
     cursor: pointer;
@@ -63,7 +64,6 @@ export const StyledNav = styled.nav`
     position: absolute;
     top: 1rem;
     left: -20px;
-    /* background-color: #d92929; */
     padding: 2rem;
     display: flex;
     flex-direction: column;

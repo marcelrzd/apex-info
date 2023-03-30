@@ -57,7 +57,8 @@ const Cards = styled.div`
   }
 `;
 const Card = styled.div`
-  flex-basis: 20rem;
+  margin-left: 1rem;
+  flex-basis: 21rem;
   .icon {
     display: flex;
     align-items: center;

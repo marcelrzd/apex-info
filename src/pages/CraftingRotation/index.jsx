@@ -82,6 +82,7 @@ const CraftingRotation = () => {
                               }`,
                               // `${craftItem.bundleContent[0].itemType.rarityHex}`,
                               color: "white",
+                              width: "70%",
                             }}
                           >
                             {normalizeString(
@@ -89,7 +90,12 @@ const CraftingRotation = () => {
                             )}
                           </h3>
                         </CraftStyles.StyledIconDiv>
-                        <p>Cost: {craftItem.bundleContent[0].cost} materials</p>
+                        <p>
+                          Cost:{" "}
+                          <span>
+                            {craftItem.bundleContent[0].cost} materials
+                          </span>
+                        </p>
                       </CraftStyles.Card>
                       <CraftStyles.Card key={uuidv4()}>
                         <CraftStyles.H3SectionTitle>
@@ -114,6 +120,7 @@ const CraftingRotation = () => {
                                   : "#666666"
                               }`,
                               color: "white",
+                              width: "70%",
                             }}
                           >
                             {normalizeString(
@@ -121,7 +128,12 @@ const CraftingRotation = () => {
                             )}
                           </h3>
                         </CraftStyles.StyledIconDiv>
-                        <p>Cost: {craftItem.bundleContent[1].cost} materials</p>
+                        <p>
+                          Cost:{" "}
+                          <span>
+                            {craftItem.bundleContent[1].cost} materials
+                          </span>
+                        </p>
                       </CraftStyles.Card>
                     </>
                   ) : (
@@ -148,6 +160,7 @@ const CraftingRotation = () => {
                                 : "#666666"
                             }`,
                             color: "white",
+                            width: "70%",
                           }}
                         >
                           {normalizeString(
@@ -155,7 +168,10 @@ const CraftingRotation = () => {
                           )}
                         </h3>
                       </CraftStyles.StyledIconDiv>
-                      <p>Cost: {craftItem.bundleContent[0].cost} materials</p>
+                      <p>
+                        Cost:{" "}
+                        <span>{craftItem.bundleContent[0].cost} materials</span>
+                      </p>
                     </CraftStyles.Card>
                   )}
                 </>

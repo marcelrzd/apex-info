@@ -9,8 +9,9 @@ const Footer = () => {
       <p>
         {currentYear}{" "}
         <a href="https://www.linkedin.com/in/rzdmarcel/">
-          Marcel. All rights reserved
+          <span>Marcel</span>
         </a>
+        . All rights reserved
       </p>
     </StyledFooter>
   );
