@@ -8,7 +8,6 @@ const newsReducer = (state = initialState, action) => {
       return {
         ...state,
         news: action.payload.news,
-        isLoading: false,
       };
     default:
       return {

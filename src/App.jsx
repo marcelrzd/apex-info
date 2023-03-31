@@ -6,7 +6,6 @@ import React, { lazy, Suspense } from "react";
 // import About from "./pages/About";
 // import MapRotation from "./pages/MapRotation";
 // import CraftingRotation from "./pages/CraftingRotation";
-import MovieDetail from "./pages/MovieDetail";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
@@ -21,7 +20,8 @@ import { AnimatePresence } from "framer-motion";
 const Home = lazy(() => import("./pages/Home"));
 const MapRotation = lazy(() => import("./pages/MapRotation"));
 const CraftingRotation = lazy(() => import("./pages/CraftingRotation"));
-const About = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const PlayerInfo = lazy(() => import("./pages/PlayerInfo"));
 // todo: finish lazyloading the components and create a personalized loading component
 
 function App() {
@@ -41,8 +41,8 @@ function App() {
               exact
               element={<CraftingRotation />}
             />
-            <Route path="/work/:id" exact element={<MovieDetail />} />
-            <Route path="/about" exact element={<About />} />
+            <Route path="/player-info" exact element={<PlayerInfo />} />
+            <Route path="/PlayerInfo" exact element={<About />} />
           </Routes>
         </Suspense>
         <Footer />

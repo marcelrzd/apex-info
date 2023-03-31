@@ -39,15 +39,20 @@ const Navbar = () => {
     }
   };
 
+  // close dropdown when clicking in any page
+  const closeDropDown = () => {
+    setShowDropdown(false);
+  };
+
   return (
     <StyledNav>
-      <h1>
+      <h1 onClick={closeDropDown}>
         <Link className="link" to="/home" id="logo">
           <img src={logo} alt="logo" /> Infos
         </Link>
       </h1>
       <ul>
-        <li>
+        <li onClick={closeDropDown}>
           <Link className="link" to="/home">
             News
           </Link>
@@ -64,12 +69,20 @@ const Navbar = () => {
           {showDropdown && (
             <ul className="dropdown-menu">
               <li>
-                <Link className="link" to="/rotation/map">
+                <Link
+                  className="link"
+                  to="/rotation/map"
+                  onClick={closeDropDown}
+                >
                   Map
                 </Link>
               </li>
               <li>
-                <Link className="link" to="/rotation/crafting">
+                <Link
+                  className="link"
+                  to="/rotation/crafting"
+                  onClick={closeDropDown}
+                >
                   Crafting
                 </Link>
               </li>
@@ -77,7 +90,18 @@ const Navbar = () => {
           )}
         </li>
         <li>
-          <Link className="link" to="/about">
+          <Link className="link" to="/player-info" onClick={closeDropDown}>
+            Player Info
+          </Link>
+          <Line
+            className={LineClass}
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/player-info" ? "50%" : "0%" }}
+          />
+        </li>
+        <li>
+          <Link className="link" to="/about" onClick={closeDropDown}>
             About
           </Link>
           <Line
