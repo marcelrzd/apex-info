@@ -32,6 +32,7 @@ const MapRotation = () => {
 
   //   Get data
   const { brMap } = useSelector((state) => state.brMap);
+
   // Creating variables after data is fetched from the api
   let remainingTime = "";
   let mapName = "";
@@ -55,32 +56,52 @@ const MapRotation = () => {
   }
 
   // creating a countdown to map change
-  const initialTime = {
-    hours: remainingTime.split(":")[0],
-    minutes: remainingTime.split(":")[1],
-    seconds: remainingTime.split(":")[2],
-  };
-  const [timeLeft, setTimeLeft] = useState(initialTime);
+  const [timeLeft, setTimeLeft] = useState(null);
+  const [intervalId, setIntervalId] = useState(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (timeLeft.seconds > 0) {
-        setTimeLeft({ ...timeLeft, seconds: timeLeft.seconds - 1 });
-      } else if (timeLeft.minutes > 0) {
-        setTimeLeft({
-          hours: timeLeft.hours,
-          minutes: timeLeft.minutes - 1,
-          seconds: 59,
-        });
-      } else if (timeLeft.hours > 0) {
-        setTimeLeft({ hours: timeLeft.hours - 1, minutes: 59, seconds: 59 });
-      } else {
-        clearInterval(interval);
-      }
-    }, 1000);
+    if (remainingTime === null) {
+      return;
+    }
 
-    return () => clearInterval(interval);
-  }, [timeLeft]);
+    const initialTime = {
+      hours: remainingTime.split(":")[0],
+      minutes: remainingTime.split(":")[1],
+      seconds: remainingTime.split(":")[2],
+    };
+    setTimeLeft(initialTime);
+
+    if (intervalId === null) {
+      const id = setInterval(() => {
+        setTimeLeft((prevTime) => {
+          const newTimeLeft = { ...prevTime };
+          if (newTimeLeft.seconds > 0) {
+            newTimeLeft.seconds--;
+          } else if (newTimeLeft.minutes > 0) {
+            newTimeLeft.minutes--;
+            newTimeLeft.seconds = 59;
+          } else if (newTimeLeft.hours > 0) {
+            newTimeLeft.hours--;
+            newTimeLeft.minutes = 59;
+            newTimeLeft.seconds = 59;
+          } else {
+            clearInterval(intervalId);
+          }
+          return newTimeLeft;
+        });
+      }, 1000);
+      setIntervalId(id);
+    }
+    return () => {
+      if (intervalId !== null) {
+        clearInterval(intervalId);
+      }
+    };
+  }, [remainingTime, intervalId]);
+
+  if (timeLeft === null) {
+    return <div style={{ color: "white" }}>Loading...</div>;
+  }
 
   const formatTime = (time) => {
     return time < 10 ? `0${time}` : time;
