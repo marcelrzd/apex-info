@@ -17,7 +17,9 @@ html{
 body{
     background: #1b1b1b;
     font-family: 'Inter', sans-serif;
-    overflow: hidden;
+    display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 button{
@@ -59,7 +61,7 @@ p{
     font-size: 1.4rem;
     line-height: 150%;
 }
-
+.App{flex: 1}
 `;
 
 export default GlobalStyle;

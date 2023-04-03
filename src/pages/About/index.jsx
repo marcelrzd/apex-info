@@ -1,11 +1,11 @@
 import React from "react";
 // Animations
 import { motion } from "framer-motion";
-import { pageAnimation, titelAnim } from "../animation";
+import { pageAnimation, titelAnim } from "../../animation";
 
 // style
 import styled from "styled-components";
-
+// TODO: create the about page
 const About = () => {
   return (
     <ContactStyle
@@ -17,26 +17,26 @@ const About = () => {
     >
       <Title>
         <Hide>
-          <motion.h2 variants={titelAnim}>Get in touch</motion.h2>
+          <motion.h2 variants={titelAnim}>About</motion.h2>
         </Hide>
       </Title>
       <div>
         <Hide>
           <Social variants={titelAnim}>
             <Circle></Circle>
-            <h2>Send us a message</h2>
+            <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
           </Social>
         </Hide>
         <Hide>
           <Social variants={titelAnim}>
             <Circle></Circle>
-            <h2>Send an mail</h2>
+            <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
           </Social>
         </Hide>
         <Hide>
           <Social variants={titelAnim}>
             <Circle></Circle>
-            <h2>Social media</h2>
+            <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
           </Social>
         </Hide>
       </div>

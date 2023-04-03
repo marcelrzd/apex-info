@@ -108,12 +108,7 @@ const MapRotation = () => {
   };
 
   return (
-    <Services
-      variants={scrollReveal}
-      animate={controls}
-      initial="hidden"
-      ref={element}
-    >
+    <Services>
       {brMap.current ? (
         <>
           <NewsStyles.Description>
@@ -125,7 +120,7 @@ const MapRotation = () => {
               <Card>
                 <MapStyles.StyledIconDiv className="icon">
                   <FontAwesomeIcon icon={faHourglassEnd} />
-                  <h3>Ends in</h3>
+                  <h3 style={{ width: "100px" }}>Ends in</h3>
                 </MapStyles.StyledIconDiv>
                 <p>
                   {`${timeLeft.hours}h:${timeLeft.minutes}m:${formatTime(
@@ -136,14 +131,14 @@ const MapRotation = () => {
               <Card>
                 <MapStyles.StyledIconDiv className="icon">
                   <FontAwesomeIcon icon={faMap} />
-                  <h3>Next Map</h3>
+                  <h3 style={{ width: "100px" }}>Next Map</h3>
                 </MapStyles.StyledIconDiv>
                 <p>{brMap.next.map}</p>
               </Card>
               <Card>
                 <MapStyles.StyledIconDiv className="icon">
                   <FontAwesomeIcon icon={faClock} />
-                  <h3>Duration</h3>
+                  <h3 style={{ width: "100px" }}>Duration</h3>
                 </MapStyles.StyledIconDiv>
                 <p>{brMap.current.DurationInMinutes} min</p>
               </Card>
@@ -152,6 +147,7 @@ const MapRotation = () => {
           <NewsStyles.Image>
             <img src={mapImg} alt="" />
           </NewsStyles.Image>
+          <div style={{ height: "40px" }}></div>
         </>
       ) : (
         ""

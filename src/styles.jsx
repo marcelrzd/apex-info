@@ -13,13 +13,26 @@ export const StyledFooter = styled(motion.footer)`
   margin: auto;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.8rem;
+  margin-top: 30%;
   a {
     font-size: 1.5rem;
     color: white;
     font-family: "Inter", sans-serif;
     cursor: pointer;
     text-decoration: none;
+  }
+  @media (max-width: 1920px) {
+    p,
+    a {
+      font-size: 1.3rem;
+    }
+  }
+  @media (max-width: 1700px) {
+    p,
+    a {
+      font-size: 1.5rem;
+    }
   }
 `;
 
@@ -51,11 +64,13 @@ export const StyledNav = styled.nav`
     display: flex;
     list-style: none;
   }
+
   #logo {
-    font-family: "Lobster", cursive;
+    font-family: "Bebas Neue", cursive;
     font-size: 1.5rem;
     font-weight: lighter;
   }
+
   li {
     padding-left: 10rem;
     position: relative;

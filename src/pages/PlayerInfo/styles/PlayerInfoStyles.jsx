@@ -72,9 +72,8 @@ const Card = styled.div`
 `;
 
 const FormDiv = styled.div`
-  padding: 2rem 5rem;
+  padding: 2rem 6rem;
   text-align: center;
-
   input {
     border-radius: 0.5rem;
     width: 40%;

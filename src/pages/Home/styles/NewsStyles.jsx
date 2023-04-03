@@ -26,16 +26,23 @@ const StyledTitle = styled(motion.h2)`
 `;
 
 const About = styled(motion.div)`
-  max-height: 60vh;
+  max-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5rem 10rem;
   color: white;
+  @media (max-width: 1920px) {
+    max-height: 41vh;
+  }
+  @media (max-width: 1700px) {
+    max-height: 60vh;
+  }
   @media (max-width: 1300px) {
     display: block;
     padding: 2rem 2rem;
     text-align: center;
+    max-height: 40vh;
   }
 `;
 
@@ -63,6 +70,62 @@ const Image = styled.div`
     height: 53vh;
     object-fit: cover;
   }
+  @media (max-width: 1300px) {
+    img {
+      margin-top: 5%;
+      height: 60vh;
+    }
+  }
 `;
 
-export default { MoreButton, StyledTitle, About, Description, Image };
+const CarouselDiv = styled.div`
+  width: 97% !important;
+  padding: 1.5rem;
+  .rec {
+    background: transparent !important;
+  }
+  .rec-arrow {
+    background: transparent;
+    border: 1px solid #d92929;
+    color: rgb(218, 215, 215, 0.5);
+    transition: all 0.5s ease;
+    :hover {
+      background: #d92929 !important;
+      color: white;
+      transition: all 0.5s ease;
+    }
+  }
+
+  .rec-dot {
+    box-shadow: #70151592 0px 0px 1px 3px;
+  }
+
+  .rec-dot_active,
+  .rec-dot:hover {
+    background: #d92929 !important;
+    box-shadow: #d92929 0px 0px 1px 3px;
+    transition: all 0.5s ease;
+  }
+
+  @media (max-width: 1300px) {
+    width: 96% !important;
+  }
+  @media (max-width: 1000px) {
+    width: 95% !important;
+  }
+  @media (max-width: 700px) {
+    width: 93% !important;
+  }
+  @media (max-width: 600px) {
+    width: 91% !important;
+  }
+`;
+
+export default {
+  MoreButton,
+  StyledTitle,
+  About,
+  Description,
+  Image,
+  CarouselDiv,
+};

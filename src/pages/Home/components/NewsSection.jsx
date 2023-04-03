@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 // styles
 import { Hide } from "../../../styles";
 import NewsStyles from "../styles/NewsStyles";
 // animation
 import { motion } from "framer-motion";
 import { titelAnim, fade, photoAnim, pageAnimation } from "../../../animation";
+import Carousel from "@itseasy21/react-elastic-carousel";
 // components
 import Wave from "../../../components/Wave";
 
@@ -20,15 +21,18 @@ const NewsSection = () => {
 
   //   Get data
   const { news } = useSelector((state) => state.news);
+
+  // TODO: find better option to carousel
   return (
     <>
       <NewsStyles.StyledTitle variants={fade}>
         Latest News
       </NewsStyles.StyledTitle>
       {news.length ? (
-        <>
-          {
-            news.map((item) => (
+        <NewsStyles.CarouselDiv>
+          {/* <Wave /> */}
+          <Carousel enableSwipe={true}>
+            {news.slice(0, 5).map((item) => (
               <NewsStyles.About
                 key={item.link}
                 variants={pageAnimation}
@@ -41,14 +45,6 @@ const NewsSection = () => {
                     <Hide>
                       <motion.h2 variants={titelAnim}>{item.title}</motion.h2>
                     </Hide>
-                    {/* <Hide>
-            <motion.h2 variants={titelAnim}>
-              your <span>dreams</span> come
-            </motion.h2>
-          </Hide>
-          <Hide>
-            <motion.h2 variants={titelAnim}>true</motion.h2>
-          </Hide> */}
                   </motion.div>
                   <motion.p variants={fade}>{item.short_desc}</motion.p>
                   <NewsStyles.MoreButton
@@ -60,19 +56,12 @@ const NewsSection = () => {
                   </NewsStyles.MoreButton>
                 </NewsStyles.Description>
                 <NewsStyles.Image>
-                  <motion.img
-                    src={item.img}
-                    alt=""
-                    variants={photoAnim}
-                    // initial="hidden"
-                    // animate="show"
-                  />
+                  <motion.img src={item.img} alt="" variants={photoAnim} />
                 </NewsStyles.Image>
-                <Wave />
               </NewsStyles.About>
-            ))[0]
-          }
-        </>
+            ))}
+          </Carousel>
+        </NewsStyles.CarouselDiv>
       ) : (
         ""
       )}

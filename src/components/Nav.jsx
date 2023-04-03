@@ -89,7 +89,7 @@ const Navbar = () => {
             </ul>
           )}
         </li>
-        <li>
+        {/* <li >
           <Link className="link" to="/player-info" onClick={closeDropDown}>
             Player Info
           </Link>
@@ -99,7 +99,7 @@ const Navbar = () => {
             initial={{ width: "0%" }}
             animate={{ width: pathname === "/player-info" ? "50%" : "0%" }}
           />
-        </li>
+        </li> */}
         <li>
           <Link className="link" to="/about" onClick={closeDropDown}>
             About

@@ -42,10 +42,9 @@ function App() {
               element={<CraftingRotation />}
             />
             <Route path="/player-info" exact element={<PlayerInfo />} />
-            <Route path="/PlayerInfo" exact element={<About />} />
+            <Route path="/about" exact element={<About />} />
           </Routes>
         </Suspense>
-        <Footer />
       </AnimatePresence>
     </div>
   );
