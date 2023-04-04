@@ -1,34 +1,44 @@
-Apex Info
-A React-based web application to display information and news about the popular battle royale game, Apex Legends.
+# Apex Info
 
-Table of Contents
-Description
-Installation
-Usage
-Contributing
-License
-Description
-Apex Info is a web application built with React and designed to display the latest news, statistics, and other information about Apex Legends. The application retrieves data from the official Apex Legends API and presents it in an easy-to-use interface.
+This project is a React-based web application that displays informations and the latest news about Apex Legends, a popular battle royale video game.
 
-Installation
-To install the Apex Info application, follow these steps:
+## Getting Started
 
-Clone the repository to your local machine: git clone https://github.com/marcelrzd/apex-info.git
-Install the necessary dependencies by running npm install
-Run the application locally using npm start
-Usage
-Once the application is running, you can use it to:
+To get started with this project, you'll need to have Node.js and npm installed on your machine. Once you have those installed, you can follow these steps to run the project locally:
 
-View the latest news and updates about Apex Legends
-Check player stats and rankings
-Browse information about weapons, characters, and maps in the game
-Contributing
-Contributions to the Apex Info project are always welcome! If you'd like to contribute code, please follow these steps:
+1. Clone this repository to your local machine.
+2. Open your terminal and navigate to the project directory.
+3. Run `npm install` to install the necessary dependencies.
+4. Run `npm start` to start the development server.
+5. Open your web browser and navigate to `http://localhost:3000`.
 
-Fork the repository
-Create a new branch for your changes: git checkout -b my-new-feature
-Make your changes and commit them with a descriptive message: git commit -m "Add feature X"
-Push your changes to your fork: git push origin my-new-feature
-Submit a pull request to the main repository
-License
-Apex Info is licensed under the MIT License. See the LICENSE file for more information.
+## Features
+
+This web application has the following features:
+
+- Displays the latest news about Apex Legends from the official game website.
+- Displays information about the current in-game season, including the current map and crafting item rotations.
+
+## Contributing
+
+If you would like to contribute to this project, you can follow these steps:
+
+1. Fork this repository.
+2. Create a new branch for your changes.
+3. Make your changes and commit them.
+4. Push your changes to your forked repository.
+5. Create a pull request to merge your changes into the main repository.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
+
+## Credits
+
+This project was created by [Marcel Rezende](https://github.com/marcelrzd).
+
+The following resources were used in the creation of this project:
+
+- [Apex Legends API](https://apexlegendsapi.com/)
+- [React](https://reactjs.org/)
+- [Redux](https://react-redux.js.org/)
