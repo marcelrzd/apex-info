@@ -5,6 +5,9 @@ import { pageAnimation, titelAnim } from "../../animation";
 
 // style
 import styled from "styled-components";
+
+// Components
+import Circle from "../../components/Circle";
 // TODO: create the about page
 const About = () => {
   return (
@@ -17,7 +20,7 @@ const About = () => {
     >
       <Title>
         <Hide>
-          <motion.h2 variants={titelAnim}>About</motion.h2>
+          <motion.h2 variants={titelAnim}>About the game</motion.h2>
         </Hide>
       </Title>
       <div>
@@ -64,13 +67,6 @@ const Title = styled.div`
 
 const Hide = styled.div`
   overflow: hidden;
-`;
-
-const Circle = styled.div`
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  background: #353535;
 `;
 
 const Social = styled(motion.div)`

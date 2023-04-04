@@ -17,7 +17,7 @@ const H3SectionTitle = styled.h3`
   padding: 1rem 0;
 `;
 
-const Services = styled(motion.div)`
+const CraftingInfo = styled(motion.div)`
   max-height: 65vh;
   height: 65vh;
   display: flex;
@@ -71,11 +71,17 @@ const Card = styled.div`
   }
 `;
 
+const LegendDiv = styled.div`
+  display: flex;
+  margin-top: -7%;
+`;
+
 export default {
+  LegendDiv,
   StyledIconDiv,
   Card,
   Cards,
   IconImg,
   H3SectionTitle,
-  Services,
+  CraftingInfo,
 };

@@ -16,6 +16,7 @@ import GlobalStyle from "./components/GlobalStyle";
 import { Routes, Route, useLocation } from "react-router-dom";
 // Animation
 import { AnimatePresence } from "framer-motion";
+import Loading from "./components/Loading";
 
 const Home = lazy(() => import("./pages/Home"));
 const MapRotation = lazy(() => import("./pages/MapRotation"));
@@ -31,7 +32,7 @@ function App() {
       <GlobalStyle />
       <Nav />
       <AnimatePresence mode="wait">
-        <Suspense fallback={<h1>...Loading</h1>}>
+        <Suspense fallback={<Loading />}>
           <Routes location={location} key={location.pathname}>
             <Route path="/" exact element={<Home />} />
             <Route path="/home" exact element={<Home />} />

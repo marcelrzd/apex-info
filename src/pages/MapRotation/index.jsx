@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-// animations
-import { scrollReveal } from "../../animation";
-import { motion } from "framer-motion";
+
 // Styles
 import styled from "styled-components";
 import NewsStyles from "../Home/styles/NewsStyles";
@@ -23,8 +21,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { getBrMapRotation } from "../../actions/rotationsAction";
 
 const MapRotation = () => {
-  const [element, controls] = useScroll();
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBrMapRotation());
@@ -108,7 +104,7 @@ const MapRotation = () => {
   };
 
   return (
-    <Services>
+    <MapStyles.MapInfo>
       {brMap.current ? (
         <>
           <NewsStyles.Description>
@@ -116,8 +112,8 @@ const MapRotation = () => {
               Current BR map: <br />
               <span>{brMap.current.map}</span>
             </h2>
-            <Cards>
-              <Card>
+            <MapStyles.Cards>
+              <MapStyles.Card>
                 <MapStyles.StyledIconDiv className="icon">
                   <FontAwesomeIcon icon={faHourglassEnd} />
                   <h3 style={{ width: "100px" }}>Ends in</h3>
@@ -127,22 +123,22 @@ const MapRotation = () => {
                     timeLeft.seconds
                   )}s`}
                 </p>
-              </Card>
-              <Card>
+              </MapStyles.Card>
+              <MapStyles.Card>
                 <MapStyles.StyledIconDiv className="icon">
                   <FontAwesomeIcon icon={faMap} />
                   <h3 style={{ width: "100px" }}>Next Map</h3>
                 </MapStyles.StyledIconDiv>
                 <p>{brMap.next.map}</p>
-              </Card>
-              <Card>
+              </MapStyles.Card>
+              <MapStyles.Card>
                 <MapStyles.StyledIconDiv className="icon">
                   <FontAwesomeIcon icon={faClock} />
                   <h3 style={{ width: "100px" }}>Duration</h3>
                 </MapStyles.StyledIconDiv>
                 <p>{brMap.current.DurationInMinutes} min</p>
-              </Card>
-            </Cards>
+              </MapStyles.Card>
+            </MapStyles.Cards>
           </NewsStyles.Description>
           <NewsStyles.Image>
             <img src={mapImg} alt="" />
@@ -152,52 +148,8 @@ const MapRotation = () => {
       ) : (
         ""
       )}
-    </Services>
+    </MapStyles.MapInfo>
   );
 };
-
-const Services = styled(motion.div)`
-  max-height: 65vh;
-  height: 65vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5rem 10rem;
-  color: white;
-  @media (max-width: 1300px) {
-    display: block;
-    padding: 2rem 2rem;
-    text-align: center;
-  }
-  h2 {
-    padding-bottom: 5rem;
-  }
-  p {
-    width: 70%;
-    padding: 2rem 0rem 4rem 0rem;
-  }
-`;
-
-const Cards = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  @media (max-width: 1300px) {
-    justify-content: center;
-  }
-`;
-
-const Card = styled.div`
-  flex-basis: 20rem;
-  .icon {
-    display: flex;
-    align-items: center;
-    h3 {
-      margin-left: 1rem;
-      background: white;
-      color: black;
-      padding: 1rem;
-    }
-  }
-`;
 
 export default MapRotation;

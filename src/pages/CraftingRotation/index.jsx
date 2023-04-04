@@ -6,7 +6,8 @@ import { scrollReveal } from "../../animation";
 // Styles
 import NewsStyles from "../Home/styles/NewsStyles";
 import CraftStyles from "./styles/CraftingRotationStyles";
-
+// Components
+import Circle from "../../components/Circle";
 // images
 import replicator from "../../img/replicator.webp";
 
@@ -41,7 +42,7 @@ const CraftingRotation = () => {
   };
 
   return (
-    <CraftStyles.Services
+    <CraftStyles.CraftingInfo
       variants={scrollReveal}
       animate={controls}
       initial="hidden"
@@ -53,6 +54,20 @@ const CraftingRotation = () => {
             <h2>
               Current <span>crafting</span> rotation
             </h2>
+            <CraftStyles.LegendDiv>
+              <Circle
+                background="#A8983E"
+                text="Legendary"
+                color="#A8983E"
+              ></Circle>
+              <Circle background="#843FA2" text="Epic" color="#843FA2"></Circle>
+              <Circle background="#3E7AA5" text="Rare" color="#3E7AA5"></Circle>
+              <Circle
+                background="#666666"
+                text="Common"
+                color="#666666"
+              ></Circle>
+            </CraftStyles.LegendDiv>
             <CraftStyles.Cards>
               {crafting.map((craftItem) => (
                 <>
@@ -185,7 +200,7 @@ const CraftingRotation = () => {
       ) : (
         ""
       )}
-    </CraftStyles.Services>
+    </CraftStyles.CraftingInfo>
   );
 };
 
