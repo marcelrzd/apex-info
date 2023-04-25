@@ -48,7 +48,7 @@ const Navbar = () => {
     <StyledNav>
       <h1 onClick={closeDropDown}>
         <Link className="link" to="/home" id="logo">
-          <img src={logo} alt="logo" /> Infos
+          <img src={logo} alt="logo" /> Info
         </Link>
       </h1>
       <ul>

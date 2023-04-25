@@ -23,7 +23,7 @@ const MapRotation = lazy(() => import("./pages/MapRotation"));
 const CraftingRotation = lazy(() => import("./pages/CraftingRotation"));
 const About = lazy(() => import("./pages/About"));
 const PlayerInfo = lazy(() => import("./pages/PlayerInfo"));
-// todo: finish lazyloading the components and create a personalized loading component
+// todo: finish lazyloading the components
 
 function App() {
   const location = useLocation();
