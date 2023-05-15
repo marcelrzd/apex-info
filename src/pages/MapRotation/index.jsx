@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 // Styles
-import styled from "styled-components";
 import NewsStyles from "../Home/styles/NewsStyles";
 import MapStyles from "./styles/MapRotationStyles";
 // Icons
@@ -16,11 +15,15 @@ import worldsEdge from "../../img/worlds-edge.webp";
 import olympus from "../../img/olympus.png";
 
 // hooks
-import { useScroll } from "../../components/UseScroll";
 import { useDispatch, useSelector } from "react-redux";
 import { getBrMapRotation } from "../../actions/rotationsAction";
+import { useScroll } from "../../components/UseScroll";
+
+// Animations
+import { scrollReveal } from "../../animation";
 
 const MapRotation = () => {
+  const [element, controls] = useScroll();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBrMapRotation());
@@ -104,7 +107,12 @@ const MapRotation = () => {
   };
 
   return (
-    <MapStyles.MapInfo>
+    <MapStyles.MapInfo
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+    >
       {brMap.current ? (
         <>
           <NewsStyles.Description>

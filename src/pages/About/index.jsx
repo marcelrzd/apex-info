@@ -1,80 +1,59 @@
 import React from "react";
+
+// Styles
+import NewsStyles from "../Home/styles/NewsStyles";
+import AboutStyles from "./styles/AboutStyles";
+
+// images
+import apex from "../../img/apex-legends-logo.png";
+
+// hooks
+import { useScroll } from "../../components/UseScroll";
+
 // Animations
-import { motion } from "framer-motion";
-import { pageAnimation, titelAnim } from "../../animation";
+import { scrollReveal } from "../../animation";
 
-// style
-import styled from "styled-components";
+const MapRotation = () => {
+  const [element, controls] = useScroll();
 
-// Components
-import Circle from "../../components/Circle";
-// TODO: create the about page
-const About = () => {
   return (
-    <ContactStyle
-      variants={pageAnimation}
+    <AboutStyles.MapInfo
+      variants={scrollReveal}
+      animate={controls}
       initial="hidden"
-      animate="show"
-      exit="exit"
-      style={{ background: "#fff" }}
+      ref={element}
     >
-      <Title>
-        <Hide>
-          <motion.h2 variants={titelAnim}>About the game</motion.h2>
-        </Hide>
-      </Title>
-      <div>
-        <Hide>
-          <Social variants={titelAnim}>
-            <Circle></Circle>
-            <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
-          </Social>
-        </Hide>
-        <Hide>
-          <Social variants={titelAnim}>
-            <Circle></Circle>
-            <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
-          </Social>
-        </Hide>
-        <Hide>
-          <Social variants={titelAnim}>
-            <Circle></Circle>
-            <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
-          </Social>
-        </Hide>
-      </div>
-    </ContactStyle>
+      <NewsStyles.Description>
+        <h2>
+          About the <span>Game</span>
+        </h2>
+        <AboutStyles.Cards>
+          <AboutStyles.P>
+            <span>Apex Legends</span> is a free-to-play battle royale video game
+            developed by Respawn Entertainment and published by Electronic Arts.
+            It was released in February 2019 for Microsoft Windows, Xbox One,
+            and PlayStation 4. The game is set in the fictional Frontier
+            universe and features squad-based gameplay with up to three players
+            per team. Each player selects a character with unique abilities, and
+            teams compete to be the last ones standing among 60 players on a
+            single map. Apex Legends has received positive reviews for its
+            fast-paced gameplay, innovative mechanics, and colorful graphics. It
+            has become a popular game for both casual and competitive players,
+            with regular updates and new content being added to the game.
+          </AboutStyles.P>
+          <AboutStyles.P>
+            Its new season <span>Arsenal</span> was released on May 9th of 2023
+            and introduced a new legend, <span>Ballistic</span>. It also came
+            with weapon and legend balancing and a new ping system.
+          </AboutStyles.P>
+        </AboutStyles.Cards>
+      </NewsStyles.Description>
+      <NewsStyles.Image>
+        <AboutStyles.IMG src={apex} alt="" />
+      </NewsStyles.Image>
+      <div style={{ height: "40px" }}></div>
+    </AboutStyles.MapInfo>
   );
 };
 
-const ContactStyle = styled(motion.div)`
-  padding: 5rem 10rem;
-  color: #353535;
-  min-height: 90vh;
-  @media (max-width: 1500px) {
-    padding: 2rem;
-    font-size: 1rem;
-  }
-`;
-
-const Title = styled.div`
-  margin-bottom: 4rem;
-  color: black;
-  @media (max-width: 1500px) {
-    margin-top: 5rem;
-  }
-`;
-
-const Hide = styled.div`
-  overflow: hidden;
-`;
-
-const Social = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  h2 {
-    margin: 2rem;
-  }
-`;
-
-export default About;
+export default MapRotation;

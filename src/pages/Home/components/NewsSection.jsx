@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 // styles
 import { Hide } from "../../../styles";
 import NewsStyles from "../styles/NewsStyles";
 // animation
 import { motion } from "framer-motion";
-import { titelAnim, fade, photoAnim, pageAnimation } from "../../../animation";
+import { titleAnim, fade, photoAnim, pageAnimation } from "../../../animation";
 import Carousel from "@itseasy21/react-elastic-carousel";
 // components
 import Wave from "../../../components/Wave";
@@ -43,7 +43,7 @@ const NewsSection = () => {
                 <NewsStyles.Description>
                   <motion.div>
                     <Hide>
-                      <motion.h2 variants={titelAnim}>{item.title}</motion.h2>
+                      <motion.h2 variants={titleAnim}>{item.title}</motion.h2>
                     </Hide>
                   </motion.div>
                   <motion.p variants={fade}>{item.short_desc}</motion.p>
