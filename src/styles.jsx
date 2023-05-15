@@ -10,7 +10,7 @@ export const Hide = styled.div`
 export const StyledFooter = styled(motion.footer)`
   min-height: 3vh;
   display: flex;
-  margin: auto;
+  margin: -1% !important;
   justify-content: center;
   align-items: center;
   padding: 0.8rem;

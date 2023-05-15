@@ -36,7 +36,7 @@ const About = styled(motion.div)`
     max-height: 41vh;
   }
   @media (max-width: 1700px) {
-    max-height: 60vh;
+    max-height: 46vh;
   }
   @media (max-width: 1300px) {
     display: block;
