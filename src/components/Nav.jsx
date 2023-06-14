@@ -5,10 +5,6 @@ import { useLocation } from "react-router-dom";
 import logo from "../img/apex-white-nav-logo.svg";
 import { StyledNav, Line } from "../styles";
 
-// fontawesome icons
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 const Navbar = () => {
   const { pathname } = useLocation();
 
@@ -26,34 +22,19 @@ const Navbar = () => {
   }, []);
   const LineClass = pageWidth < 1300 ? "line-mobile" : "";
 
-  // dropdown
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [dropDownIcon, setDropDownIcon] = useState(faChevronDown);
-
-  const handleDropdown = () => {
-    setShowDropdown(!showDropdown);
-    if (showDropdown === false) {
-      setDropDownIcon(faChevronUp);
-    } else {
-      setDropDownIcon(faChevronDown);
-    }
-  };
-
-  // close dropdown when clicking in any page
-  const closeDropDown = () => {
-    setShowDropdown(false);
-  };
-
   return (
-    <StyledNav>
-      <h1 onClick={closeDropDown}>
-        <Link className="link" to="/home" id="logo">
+    <StyledNav className="flex items-center justify-between w-full py-6">
+      <h1>
+        <Link className="link w-28" to="/home" id="logo">
           <img src={logo} alt="logo" /> Info
         </Link>
       </h1>
       <ul>
-        <li onClick={closeDropDown}>
-          <Link className="link" to="/home">
+        <li>
+          <Link
+            className="text-xl hover:text-primary transition-colors ease-in-out"
+            to="/home"
+          >
             News
           </Link>
           <Line
@@ -62,32 +43,37 @@ const Navbar = () => {
             animate={{ width: pathname === "/home" ? "50%" : "0%" }}
           />
         </li>
-        <li className="dropdown">
-          <span onClick={handleDropdown}>
-            In Rotation <FontAwesomeIcon icon={dropDownIcon} />
-          </span>
-          {showDropdown && (
-            <ul className="dropdown-menu">
-              <li>
+        <li>
+          <div className="dropdown dropdown-end">
+            <label
+              tabIndex={0}
+              className="text-2xl hover:text-primary m-1 transition-all ease-in-out cursor-pointer text-white"
+            >
+              In Rotation
+            </label>
+
+            <ul
+              tabIndex={0}
+              className="dropdown-content p-2 shadow flex-col transition-all ease-in-out"
+            >
+              <li className="mb-4 text-right">
                 <Link
-                  className="link"
+                  className="hover:text-primary w-52 transition-colors ease-in-out"
                   to="/rotation/map"
-                  onClick={closeDropDown}
                 >
                   Map
                 </Link>
               </li>
-              <li>
+              <li className="mb-4 text-right">
                 <Link
-                  className="link"
+                  className="hover:text-primary w-52 transition-colors ease-in-out"
                   to="/rotation/crafting"
-                  onClick={closeDropDown}
                 >
                   Crafting
                 </Link>
               </li>
             </ul>
-          )}
+          </div>
         </li>
         {/* <li >
           <Link className="link" to="/player-info" onClick={closeDropDown}>
@@ -101,7 +87,10 @@ const Navbar = () => {
           />
         </li> */}
         <li>
-          <Link className="link" to="/about" onClick={closeDropDown}>
+          <Link
+            className="text-xl hover:text-primary transition-colors ease-in-out"
+            to="/about"
+          >
             About
           </Link>
           <Line

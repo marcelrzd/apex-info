@@ -75,25 +75,7 @@ export const StyledNav = styled.nav`
     padding-left: 10rem;
     position: relative;
   }
-  .dropdown-menu {
-    position: absolute;
-    top: 1rem;
-    left: -20px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .dropdown-menu li a {
-    transition: color 0.5s ease;
-  }
-  .dropdown-menu li a:hover {
-    color: #d92929;
-    transition: color 0.5s ease;
-  }
 
-  .dropdown-menu li {
-    margin-bottom: 10px;
-  }
   @media (max-width: 1300px) {
     flex-direction: column;
     padding: 2rem 1rem;

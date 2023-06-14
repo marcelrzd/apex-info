@@ -28,25 +28,28 @@ const PlayerInfo = lazy(() => import("./pages/PlayerInfo"));
 function App() {
   const location = useLocation();
   return (
-    <div className="App">
+    <div className="App flex flex-col min-h-screen">
       <GlobalStyle />
       <Nav />
-      <AnimatePresence mode="wait">
-        <Suspense fallback={<Loading />}>
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" exact element={<Home />} />
-            <Route path="/home" exact element={<Home />} />
-            <Route path="/rotation/map" exact element={<MapRotation />} />
-            <Route
-              path="/rotation/crafting"
-              exact
-              element={<CraftingRotation />}
-            />
-            <Route path="/player-info" exact element={<PlayerInfo />} />
-            <Route path="/about" exact element={<About />} />
-          </Routes>
-        </Suspense>
-      </AnimatePresence>
+      <div className="flex-grow mt-16">
+        <AnimatePresence mode="wait">
+          <Suspense fallback={<Loading />}>
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" exact element={<Home />} />
+              <Route path="/home" exact element={<Home />} />
+              <Route path="/rotation/map" exact element={<MapRotation />} />
+              <Route
+                path="/rotation/crafting"
+                exact
+                element={<CraftingRotation />}
+              />
+              <Route path="/player-info" exact element={<PlayerInfo />} />
+              <Route path="/about" exact element={<About />} />
+            </Routes>
+          </Suspense>
+        </AnimatePresence>
+      </div>
+
       <Footer />
     </div>
   );

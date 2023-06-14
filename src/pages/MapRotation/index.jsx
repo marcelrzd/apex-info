@@ -13,6 +13,7 @@ import stormPoint from "../../img/storm-point.jpeg";
 import brokenMoon from "../../img/broken-moon.jpeg";
 import worldsEdge from "../../img/worlds-edge.webp";
 import olympus from "../../img/olympus.png";
+import kings from "../../img/kings-canyon.png";
 
 // hooks
 import { useDispatch, useSelector } from "react-redux";
@@ -52,6 +53,9 @@ const MapRotation = () => {
   }
   if (mapName === "Olympus") {
     mapImg = olympus;
+  }
+  if (mapName === "Kings Canyon") {
+    mapImg = kings;
   }
 
   // creating a countdown to map change
@@ -116,7 +120,7 @@ const MapRotation = () => {
       {brMap.current ? (
         <>
           <NewsStyles.Description>
-            <h2>
+            <h2 className="">
               Current BR map: <br />
               <span>{brMap.current.map}</span>
             </h2>
