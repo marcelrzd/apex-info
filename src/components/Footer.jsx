@@ -1,17 +1,15 @@
 import React from "react";
-import { fadeFooter } from "../animation";
-import { StyledFooter } from "../styles";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <footer className="footer footer-center text-base-content">
-      <div>
+      <div className="font-medium">
         <p>
-          Copyright © 2023 - All right reserved by{" "}
+          Copyright © {currentYear} - All right reserved by{" "}
           <a
             href={"https://github.com/marcelrzd"}
-            className="font-medium text-primary text-xl hover:underline transition-all ease-in-out"
+            className="font-semibold text-primary text-2xl hover:underline transition-all ease-in-out"
           >
             Marcel
           </a>

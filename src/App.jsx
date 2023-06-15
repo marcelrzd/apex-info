@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 
 // pages
 // import Home from "./pages/Home";
@@ -17,6 +17,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 // Animation
 import { AnimatePresence } from "framer-motion";
 import Loading from "./components/Loading";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "./actions/themeAction";
 
 const Home = lazy(() => import("./pages/Home"));
 const MapRotation = lazy(() => import("./pages/MapRotation"));
@@ -27,8 +29,15 @@ const PlayerInfo = lazy(() => import("./pages/PlayerInfo"));
 
 function App() {
   const location = useLocation();
+
+  // Get the current theme
+  const { theme } = useSelector((state) => state.theme);
+
   return (
-    <div className="App flex flex-col min-h-screen">
+    <div
+      data-theme={theme}
+      className="App flex flex-col min-h-screen transition-all ease-in-out"
+    >
       <GlobalStyle />
       <Nav />
       <div className="flex-grow mt-16">

@@ -22,7 +22,7 @@ const NewsSection = () => {
   //   Get data
   const { news } = useSelector((state) => state.news);
 
-  // TODO: find better option to carousel
+  // TODO: find a better option to carousel
   return (
     <>
       <NewsStyles.StyledTitle variants={fade}>

@@ -8,13 +8,12 @@ const MoreButton = styled(motion.a)`
   padding: 1rem 2rem;
   border: 3px solid #d92929;
   background: transparent;
-  color: white;
+
   transition: all 0.5s ease;
   font-family: "Inter", sans-serif;
   text-decoration: none;
   &:hover {
     background-color: #d92929;
-    color: white;
   }
 `;
 
@@ -22,16 +21,15 @@ const StyledTitle = styled(motion.h2)`
   text-align: center;
   padding: 2rem 2rem;
   /* margin-bottom: -5%; */
-  color: white;
 `;
 
 const About = styled(motion.div)`
-  max-height: 80vh;
+  max-height: 1s0vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5rem 10rem;
-  color: white;
+
   @media (max-width: 1920px) {
     max-height: 41vh;
   }

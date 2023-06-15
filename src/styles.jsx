@@ -17,7 +17,7 @@ export const StyledFooter = styled(motion.footer)`
   margin-top: 30%;
   a {
     font-size: 1.5rem;
-    color: white;
+
     font-family: "Inter", sans-serif;
     cursor: pointer;
     text-decoration: none;
@@ -48,7 +48,6 @@ export const StyledNav = styled.nav`
   top: 0;
   z-index: 10;
   font-family: "Bebas Neue", sans-serif;
-  background: rgb(27, 27, 27);
   .line-mobile {
     width: 100% !important;
   }
@@ -56,7 +55,6 @@ export const StyledNav = styled.nav`
   a,
   span {
     font-size: 1.5rem;
-    color: white;
     text-decoration: none;
     cursor: pointer;
   }
