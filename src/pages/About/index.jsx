@@ -9,12 +9,15 @@ import apex from "../../img/apex-legends-logo.png";
 
 // hooks
 import { useScroll } from "../../components/UseScroll";
+import { useSelector } from "react-redux";
 
 // Animations
 import { scrollReveal } from "../../animation";
 
-const MapRotation = () => {
+const About = () => {
   const [element, controls] = useScroll();
+  // Get the current theme
+  const { theme } = useSelector((state) => state.theme);
 
   return (
     <AboutStyles.MapInfo
@@ -24,7 +27,7 @@ const MapRotation = () => {
       ref={element}
     >
       <NewsStyles.Description>
-        <h2>
+        <h2 className={`${theme === "light" ? "text-gray-600" : ""}`}>
           About the <span>Game</span>
         </h2>
         <AboutStyles.Cards>
@@ -41,7 +44,9 @@ const MapRotation = () => {
             has become a popular game for both casual and competitive players,
             with regular updates and new content being added to the game.
           </AboutStyles.P>
-          <AboutStyles.P>
+          <AboutStyles.P
+            className={`${theme === "light" ? "text-gray-600" : ""}`}
+          >
             Its new season <span>Arsenal</span> was released on May 9th of 2023
             and introduced a new legend, <span>Ballistic</span>. It also came
             with weapon and legend balancing and a new ping system.
@@ -56,4 +61,4 @@ const MapRotation = () => {
   );
 };
 
-export default MapRotation;
+export default About;

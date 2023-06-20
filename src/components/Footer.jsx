@@ -3,9 +3,9 @@ import React from "react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="footer footer-center text-base-content">
+    <footer className="footer footer-center">
       <div className="font-medium">
-        <p>
+        <p className="text-base-content">
           Copyright © {currentYear} - All right reserved by{" "}
           <a
             href={"https://github.com/marcelrzd"}

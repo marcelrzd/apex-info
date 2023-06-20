@@ -82,11 +82,13 @@ const CarouselDiv = styled.div`
   .rec {
     background: transparent !important;
   }
+
   .rec-arrow {
     background: transparent;
     border: 1px solid #d92929;
     color: rgb(218, 215, 215, 0.5);
     transition: all 0.5s ease;
+    /* color: black; */
     :hover {
       background: #d92929 !important;
       color: white;

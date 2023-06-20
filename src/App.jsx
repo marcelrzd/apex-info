@@ -1,11 +1,5 @@
-import React, { lazy, Suspense, useEffect } from "react";
+import React, { lazy, Suspense, useEffect, useRef, useState } from "react";
 
-// pages
-// import Home from "./pages/Home";
-
-// import About from "./pages/About";
-// import MapRotation from "./pages/MapRotation";
-// import CraftingRotation from "./pages/CraftingRotation";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
@@ -17,8 +11,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 // Animation
 import { AnimatePresence } from "framer-motion";
 import Loading from "./components/Loading";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "./actions/themeAction";
+import { useSelector } from "react-redux";
 
 const Home = lazy(() => import("./pages/Home"));
 const MapRotation = lazy(() => import("./pages/MapRotation"));
@@ -36,7 +29,7 @@ function App() {
   return (
     <div
       data-theme={theme}
-      className="App flex flex-col min-h-screen transition-all ease-in-out"
+      className="flex flex-col min-h-screen transition-all ease-in-out App"
     >
       <GlobalStyle />
       <Nav />

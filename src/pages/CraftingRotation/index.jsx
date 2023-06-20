@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 // Generate random keys
 import { v4 as uuidv4 } from "uuid";
 // animations
@@ -28,10 +28,12 @@ const CraftingRotation = () => {
   const { crafting } = useSelector((state) => state.crafting);
 
   // set rarity colors
-  // Legendary: #A8983E
-  // Epic: #843FA2
-  // Rare:  #3E7AA5
-  // Common: #666666
+  const setRarityBg = (bg) => {
+    if (bg === "Legendary") return "#A8983E";
+    else if (bg === "Epic") return "#843FA2";
+    else if (bg === "Rare") return "#3E7AA5";
+    else return "#666666";
+  };
 
   const normalizeString = (name) => {
     const outputString = name
@@ -83,18 +85,9 @@ const CraftingRotation = () => {
                           ></CraftStyles.IconImg>
                           <h3
                             style={{
-                              background: `${
-                                craftItem.bundleContent[0].itemType.rarity ===
-                                "Legendary"
-                                  ? "#A8983E"
-                                  : craftItem.bundleContent[0].itemType
-                                      .rarity === "Epic"
-                                  ? "#843FA2"
-                                  : craftItem.bundleContent[0].itemType
-                                      .rarity === "Rare"
-                                  ? "#3E7AA5"
-                                  : "#666666"
-                              }`,
+                              background: `${setRarityBg(
+                                craftItem.bundleContent[0].itemType.rarity
+                              )}`,
                               // `${craftItem.bundleContent[0].itemType.rarityHex}`,
                               color: "white",
                               width: "70%",
@@ -162,18 +155,9 @@ const CraftingRotation = () => {
                         ></CraftStyles.IconImg>
                         <h3
                           style={{
-                            background: `${
-                              craftItem.bundleContent[0].itemType.rarity ===
-                              "Legendary"
-                                ? "#A8983E"
-                                : craftItem.bundleContent[0].itemType.rarity ===
-                                  "Epic"
-                                ? "#843FA2"
-                                : craftItem.bundleContent[0].itemType.rarity ===
-                                  "Rare"
-                                ? "#3E7AA5"
-                                : "#666666"
-                            }`,
+                            background: `${setRarityBg(
+                              craftItem.bundleContent[0].itemType.rarity
+                            )}`,
                             color: "white",
                             width: "70%",
                           }}
@@ -183,7 +167,7 @@ const CraftingRotation = () => {
                           )}
                         </h3>
                       </CraftStyles.StyledIconDiv>
-                      <p>
+                      <p className="text-xs p-crafting-materials">
                         Cost:{" "}
                         <span>{craftItem.bundleContent[0].cost} materials</span>
                       </p>

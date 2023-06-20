@@ -10,6 +10,16 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["dark", "light"],
+    themes: [
+      "dark",
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+          p: {
+            color: "rgb(75 85 99 / var(--tw-text-opacity));",
+          },
+        },
+      },
+    ],
   },
 };

@@ -6,8 +6,6 @@ import NewsStyles from "../styles/NewsStyles";
 import { motion } from "framer-motion";
 import { titleAnim, fade, photoAnim, pageAnimation } from "../../../animation";
 import Carousel from "@itseasy21/react-elastic-carousel";
-// components
-import Wave from "../../../components/Wave";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
@@ -22,6 +20,9 @@ const NewsSection = () => {
   //   Get data
   const { news } = useSelector((state) => state.news);
 
+  // Get the current theme
+  const { theme } = useSelector((state) => state.theme);
+
   // TODO: find a better option to carousel
   return (
     <>
@@ -30,7 +31,6 @@ const NewsSection = () => {
       </NewsStyles.StyledTitle>
       {news.length ? (
         <NewsStyles.CarouselDiv>
-          {/* <Wave /> */}
           <Carousel enableSwipe={true}>
             {news.slice(0, 5).map((item) => (
               <NewsStyles.About
@@ -51,6 +51,7 @@ const NewsSection = () => {
                     href={item.link}
                     target="_blank"
                     variants={fade}
+                    className={`${theme === "dark" ? "text-white" : ""}`}
                   >
                     More
                   </NewsStyles.MoreButton>

@@ -38,7 +38,7 @@ const Navbar = () => {
       <ul>
         <li>
           <Link
-            className="text-xl hover:text-primary transition-colors ease-in-out"
+            className="text-xl transition-colors ease-in-out hover:text-primary"
             to="/home"
           >
             News
@@ -53,18 +53,18 @@ const Navbar = () => {
           <div className="dropdown dropdown-end">
             <label
               tabIndex={0}
-              className="text-2xl hover:text-primary m-1 transition-all ease-in-out cursor-pointer "
+              className="m-1 text-2xl transition-all ease-in-out cursor-pointer hover:text-primary "
             >
               In Rotation
             </label>
 
             <ul
               tabIndex={0}
-              className="dropdown-content p-2 shadow flex-col transition-all ease-in-out"
+              className="flex-col p-2 transition-all ease-in-out dropdown-content"
             >
               <li className="mb-4 text-right">
                 <Link
-                  className="hover:text-primary w-52 transition-colors ease-in-out"
+                  className="transition-colors ease-in-out hover:text-primary w-52"
                   to="/rotation/map"
                 >
                   Map
@@ -72,7 +72,7 @@ const Navbar = () => {
               </li>
               <li className="mb-4 text-right">
                 <Link
-                  className="hover:text-primary w-52 transition-colors ease-in-out"
+                  className="transition-colors ease-in-out hover:text-primary w-52"
                   to="/rotation/crafting"
                 >
                   Crafting
@@ -83,7 +83,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            className="text-xl hover:text-primary transition-colors ease-in-out"
+            className="text-xl transition-colors ease-in-out hover:text-primary"
             to="/about"
           >
             About

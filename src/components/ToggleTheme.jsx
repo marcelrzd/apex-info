@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { toggleTheme } from "../actions/themeAction";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -19,13 +19,13 @@ const ToggleTheme = () => {
       {/* this hidden checkbox controls the state */}
       <input
         type="checkbox"
-        // defaultChecked={theme === "dark" ? true : false}
+        defaultChecked={theme === "dark" ? true : false}
         onClick={handleThemeToggle}
       />
 
       {/* sun icon */}
       <svg
-        className="swap-on fill-current w-10 h-10"
+        className="w-10 h-10 fill-current swap-on"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
@@ -34,7 +34,7 @@ const ToggleTheme = () => {
 
       {/* moon icon */}
       <svg
-        className="swap-off fill-current w-10 h-10"
+        className="w-10 h-10 fill-current swap-off"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
