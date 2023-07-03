@@ -24,14 +24,13 @@ const StyledTitle = styled(motion.h2)`
 `;
 
 const About = styled(motion.div)`
-  max-height: 80vh;
   display: flex;
   width: 100% !important;
   align-items: center;
   justify-content: space-between;
   padding: 5rem 10rem;
 
-  @media (max-width: 1920px) {
+  /* @media (max-width: 1920px) {
     max-height: 41vh;
   }
   @media (max-width: 1700px) {
@@ -42,7 +41,7 @@ const About = styled(motion.div)`
     padding: 2rem 2rem;
     text-align: center;
     max-height: 40vh;
-  }
+  } */
 `;
 
 const Description = styled.div`

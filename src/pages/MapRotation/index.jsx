@@ -117,7 +117,7 @@ const MapRotation = () => {
       initial="hidden"
       animate="show"
       exit="exit"
-      className="items-center justify-between block px-10 py-5 text-center lg:flex mt-[-10%]"
+      className="items-center justify-between block px-10 py-5 text-center lg:flex sm:mt-[-5%] mt-[-10%]"
     >
       {brMap.current ? (
         <>

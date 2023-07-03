@@ -53,7 +53,7 @@ const NewsSection = () => {
         Latest News
       </NewsStyles.StyledTitle>
       {news.length ? (
-        <div className="max-w-[1400px] w-full m-auto py-16 px-4 relative group duration-500 transform ">
+        <div className="max-w-[1400px] w-full m-auto py-16 px-4 relative group duration-500 transform sm:mt-[-4%] md:mt-10 md:mb-[-4%] lg:mt-[-5%] xl:mt-[-4%]">
           <motion.div
             className="flex items-center px-5 py-10"
             key={news[currentIndex].link}
@@ -125,7 +125,11 @@ const NewsSection = () => {
                 <div
                   className={`
                   transition-all w-3 h-3 rounded-full
-                  ${currentIndex === index ? "p-2 bg-primary" : "bg-white/50"}
+                  ${
+                    currentIndex === index
+                      ? "p-2 bg-primary"
+                      : `${theme === "dark" ? "bg-white/50" : "bg-black/50"}`
+                  }
                 `}
                 />
               </div>

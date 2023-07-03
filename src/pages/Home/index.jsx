@@ -17,6 +17,7 @@ const Home = () => {
         initial="hidden"
         animate="show"
         exit="exit"
+        className="mt-[-8%] sm:mt-[-8%] lg:mt-[-6%] xl:mt-[-5%]"
       >
         <NewsSection />
       </motion.div>
