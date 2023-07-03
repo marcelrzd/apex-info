@@ -18,8 +18,6 @@ const H3SectionTitle = styled.h3`
 `;
 
 const CraftingInfo = styled(motion.div)`
-  max-height: 65vh;
-  height: 65vh;
   display: flex;
   align-items: center;
   justify-content: space-between;

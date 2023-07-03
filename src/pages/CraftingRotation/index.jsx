@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 // Generate random keys
 import { v4 as uuidv4 } from "uuid";
 // animations
-import { scrollReveal } from "../../animation";
+import { pageAnimation, scrollReveal } from "../../animation";
 // Styles
 import NewsStyles from "../Home/styles/NewsStyles";
 import CraftStyles from "./styles/CraftingRotationStyles";
@@ -45,10 +45,11 @@ const CraftingRotation = () => {
 
   return (
     <CraftStyles.CraftingInfo
-      variants={scrollReveal}
-      animate={controls}
+      variants={pageAnimation}
       initial="hidden"
-      ref={element}
+      animate="show"
+      exit="exit"
+      className="items-center justify-between block px-10 py-5 text-center lg:flex mt-[-10%]"
     >
       {crafting ? (
         <>
@@ -56,7 +57,7 @@ const CraftingRotation = () => {
             <h2>
               Current <span>crafting</span> rotation
             </h2>
-            <CraftStyles.LegendDiv>
+            <div className="grid grid-cols-2 -mt-10 sm:flex sm:items-center sm:justify-between">
               <Circle
                 background="#A8983E"
                 text="Legendary"
@@ -69,7 +70,7 @@ const CraftingRotation = () => {
                 text="Common"
                 color="#666666"
               ></Circle>
-            </CraftStyles.LegendDiv>
+            </div>
             <CraftStyles.Cards>
               {crafting.map((craftItem) => (
                 <>
@@ -180,6 +181,7 @@ const CraftingRotation = () => {
           <NewsStyles.Image>
             <img src={replicator} alt="" />
           </NewsStyles.Image>
+          <div style={{ height: "40px" }}></div>
         </>
       ) : (
         ""

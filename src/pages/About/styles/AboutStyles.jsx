@@ -24,7 +24,7 @@ const MapInfo = styled(motion.div)`
     padding-bottom: 5rem;
   }
   p {
-    width: 70%;
+    width: 40%;
     padding: 2rem 0rem 4rem 0rem;
   }
 `;

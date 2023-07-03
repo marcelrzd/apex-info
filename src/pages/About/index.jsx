@@ -12,7 +12,8 @@ import { useScroll } from "../../components/UseScroll";
 import { useSelector } from "react-redux";
 
 // Animations
-import { scrollReveal } from "../../animation";
+import { pageAnimation, scrollReveal } from "../../animation";
+import { motion } from "framer-motion";
 
 const About = () => {
   const [element, controls] = useScroll();
@@ -20,18 +21,19 @@ const About = () => {
   const { theme } = useSelector((state) => state.theme);
 
   return (
-    <AboutStyles.MapInfo
-      variants={scrollReveal}
-      animate={controls}
+    <motion.div
+      variants={pageAnimation}
       initial="hidden"
-      ref={element}
+      animate="show"
+      exit="exit"
+      className="items-center justify-between block px-10 py-5 text-center lg:flex "
     >
       <NewsStyles.Description>
-        <h2 className={`${theme === "light" ? "text-gray-600" : ""}`}>
+        <h2 className={` pb-2 ${theme === "light" ? "text-gray-600" : ""}`}>
           About the <span>Game</span>
         </h2>
         <AboutStyles.Cards>
-          <AboutStyles.P>
+          <AboutStyles.P className="w-[70%] text-center">
             <span>Apex Legends</span> is a free-to-play battle royale video game
             developed by Respawn Entertainment and published by Electronic Arts.
             It was released in February 2019 for Microsoft Windows, Xbox One,
@@ -45,7 +47,9 @@ const About = () => {
             with regular updates and new content being added to the game.
           </AboutStyles.P>
           <AboutStyles.P
-            className={`${theme === "light" ? "text-gray-600" : ""}`}
+            className={`w-[70%] text-center ${
+              theme === "light" ? "text-gray-600" : ""
+            }`}
           >
             Its new season <span>Arsenal</span> was released on May 9th of 2023
             and introduced a new legend, <span>Ballistic</span>. It also came
@@ -57,7 +61,7 @@ const About = () => {
         <AboutStyles.IMG src={apex} alt="" />
       </NewsStyles.Image>
       <div style={{ height: "40px" }}></div>
-    </AboutStyles.MapInfo>
+    </motion.div>
   );
 };
 

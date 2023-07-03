@@ -24,8 +24,9 @@ const StyledTitle = styled(motion.h2)`
 `;
 
 const About = styled(motion.div)`
-  max-height: 1s0vh;
+  max-height: 80vh;
   display: flex;
+  width: 100% !important;
   align-items: center;
   justify-content: space-between;
   padding: 5rem 10rem;
@@ -61,11 +62,11 @@ const Description = styled.div`
 
 const Image = styled.div`
   z-index: 2;
-  flex: 1;
+  /* flex: 1; */
   overflow: hidden;
   img {
     width: 100%;
-    height: 53vh;
+    height: 46vh;
     object-fit: cover;
   }
   @media (max-width: 1300px) {

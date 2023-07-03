@@ -1,5 +1,5 @@
 import React from "react";
-import { toggleTheme } from "../actions/themeAction";
+import { toggleTheme } from "../../actions/themeAction";
 import { useDispatch, useSelector } from "react-redux";
 
 const ToggleTheme = () => {
@@ -15,11 +15,11 @@ const ToggleTheme = () => {
   };
 
   return (
-    <label className="swap swap-rotate">
+    <label className=" swap swap-rotate lg:inline-grid">
       {/* this hidden checkbox controls the state */}
       <input
         type="checkbox"
-        defaultChecked={theme === "dark" ? true : false}
+        defaultChecked={!!(theme === "dark")}
         onClick={handleThemeToggle}
       />
 

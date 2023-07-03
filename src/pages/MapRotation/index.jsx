@@ -21,7 +21,7 @@ import { getBrMapRotation } from "../../actions/rotationsAction";
 import { useScroll } from "../../components/UseScroll";
 
 // Animations
-import { scrollReveal } from "../../animation";
+import { pageAnimation, scrollReveal } from "../../animation";
 
 const MapRotation = () => {
   const [element, controls] = useScroll();
@@ -113,14 +113,15 @@ const MapRotation = () => {
 
   return (
     <MapStyles.MapInfo
-      variants={scrollReveal}
-      animate={controls}
+      variants={pageAnimation}
       initial="hidden"
-      ref={element}
+      animate="show"
+      exit="exit"
+      className="items-center justify-between block px-10 py-5 text-center lg:flex mt-[-10%]"
     >
       {brMap.current ? (
         <>
-          <NewsStyles.Description>
+          <NewsStyles.Description className="">
             <h2 className={`${theme === "light" ? "text-gray-600" : ""}`}>
               Current BR map: <br />
               <span>{brMap.current.map}</span>
@@ -159,7 +160,7 @@ const MapRotation = () => {
               </MapStyles.Card>
             </MapStyles.Cards>
           </NewsStyles.Description>
-          <NewsStyles.Image>
+          <NewsStyles.Image className="xl:max-h-[65vh]">
             <img src={mapImg} alt="" />
           </NewsStyles.Image>
           <div style={{ height: "40px" }}></div>

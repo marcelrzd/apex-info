@@ -38,14 +38,14 @@ export const StyledFooter = styled(motion.footer)`
 
 // navbar
 export const StyledNav = styled.nav`
-  min-height: 10vh;
+  /* min-height: 10vh;
   display: flex;
   margin: auto;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 10rem;
   /* position: sticky; */
-  top: 0;
+  /* top: 0; */
   z-index: 10;
   font-family: "Bebas Neue", sans-serif;
   .line-mobile {
@@ -62,7 +62,6 @@ export const StyledNav = styled.nav`
     display: flex;
     list-style: none;
   }
-
   #logo {
     font-family: "Bebas Neue", cursive;
     font-size: 1.5rem;
@@ -74,7 +73,7 @@ export const StyledNav = styled.nav`
     position: relative;
   }
 
-  @media (max-width: 1300px) {
+  /* @media (max-width: 1300px) {
     flex-direction: column;
     padding: 2rem 1rem;
     #logo {
@@ -89,7 +88,7 @@ export const StyledNav = styled.nav`
         padding: 0;
       }
     }
-  }
+  } */
 `;
 export const Line = styled(motion.div)`
   height: 0.3rem;
@@ -98,7 +97,7 @@ export const Line = styled(motion.div)`
   position: absolute;
   bottom: -80%;
   left: 60%;
-  @media (max-width: 1300px) {
+  /* @media (max-width: 1300px) {
     left: 0%;
-  }
+  } */
 `;

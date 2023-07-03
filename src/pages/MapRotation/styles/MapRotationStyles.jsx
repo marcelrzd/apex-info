@@ -9,8 +9,6 @@ const StyledIconDiv = styled.div`
 `;
 
 const MapInfo = styled(motion.div)`
-  max-height: 65vh;
-  height: 65vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
