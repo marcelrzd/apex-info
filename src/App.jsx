@@ -29,7 +29,7 @@ function App() {
   return (
     <div
       data-theme={theme}
-      className="flex flex-col min-h-screen transition-all ease-in-out App"
+      className="flex flex-col min-h-screen transition-all duration-500 ease-in-out App"
     >
       <GlobalStyle />
       <Nav />

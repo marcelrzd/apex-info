@@ -25,7 +25,7 @@ const Nav = () => {
     <div
       className={`${
         theme === "dark" ? "bg-[#1d232a]" : "bg-white"
-      } sticky top-0 left-0 w-full min-h-[10vh] md:px-14 lg:px-14 z-10`}
+      } sticky top-0 left-0 w-full min-h-[10vh] md:px-14 lg:px-14 z-10 transition-all duration-500`}
     >
       <div className="items-center justify-between py-4 md:flex md:px-10 px-7">
         <div className="items-center inline-block text-2xl font-bold cursor-pointer">
@@ -44,16 +44,46 @@ const Nav = () => {
           <ToggleTheme />
         </div>
         <div
-          onClick={() => setOpen(!open)}
+          // onClick={() => setOpen(!open)}
           className="absolute text-3xl cursor-pointer right-8 top-6 md:hidden"
         >
-          <ion-icon name={open ? "close" : "menu"}></ion-icon>
+          {/* <ion-icon name={open ? "close" : "menu"}></ion-icon> */}
+          <label className="btn btn-circle swap swap-rotate">
+            {/* this hidden checkbox controls the state */}
+            <input type="checkbox" onClick={() => setOpen(!open)} />
+
+            {/* hamburger icon */}
+            <svg
+              className="fill-current swap-off"
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 512 512"
+            >
+              <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+            </svg>
+
+            {/* close icon */}
+            <svg
+              className="fill-current swap-on"
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 512 512"
+            >
+              <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+            </svg>
+          </label>
         </div>
 
         <ul
           className={`${
-            theme === "dark" ? "bg-[#1d232a]" : "bg-white"
-          } nav md:flex md:items-center md:pb-0 pb-12 absolute md:static  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+            theme === "dark" && open
+              ? "bg-[#1d232a]"
+              : theme === "light" && open
+              ? "bg-white"
+              : ""
+          }  transition-all duration-500 nav md:flex md:items-center md:pb-0 pb-12 absolute md:static  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9  ${
             open ? "top-20 text-right" : "text-right top-[-490px]"
           }`}
         >
