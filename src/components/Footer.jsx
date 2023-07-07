@@ -8,8 +8,8 @@ const Footer = () => {
         <p className="text-base-content">
           Copyright © {currentYear} - All right reserved by{" "}
           <a
-            href={"https://github.com/marcelrzd"}
-            className="font-semibold text-primary text-2xl hover:underline transition-all ease-in-out"
+            href={"https://marcelrzd.com"}
+            className="text-2xl font-semibold transition-all ease-in-out text-primary hover:underline"
           >
             Marcel
           </a>
