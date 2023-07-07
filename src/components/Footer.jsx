@@ -8,6 +8,8 @@ const Footer = () => {
         <p className="text-base-content">
           Copyright © {currentYear} - All right reserved by{" "}
           <a
+            target="_blank"
+            rel="noreferrer"
             href={"https://marcelrzd.com"}
             className="text-2xl font-semibold transition-all ease-in-out text-primary hover:underline"
           >
