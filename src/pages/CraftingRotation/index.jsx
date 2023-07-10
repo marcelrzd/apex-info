@@ -36,11 +36,10 @@ const CraftingRotation = () => {
   };
 
   const normalizeString = (name) => {
-    const outputString = name
+    return name
       .split("_")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
-    return outputString;
   };
 
   return (
@@ -77,7 +76,7 @@ const CraftingRotation = () => {
                   {craftItem.bundleContent.length > 1 ? (
                     <>
                       <CraftStyles.Card key={uuidv4()}>
-                        <CraftStyles.H3SectionTitle>
+                        <CraftStyles.H3SectionTitle className="text-left">
                           {normalizeString(craftItem.bundleType)}
                         </CraftStyles.H3SectionTitle>
                         <CraftStyles.StyledIconDiv className="icon">
@@ -99,7 +98,7 @@ const CraftingRotation = () => {
                             )}
                           </h3>
                         </CraftStyles.StyledIconDiv>
-                        <p>
+                        <p className="text-left">
                           Cost:{" "}
                           <span>
                             {craftItem.bundleContent[0].cost} materials
@@ -107,7 +106,7 @@ const CraftingRotation = () => {
                         </p>
                       </CraftStyles.Card>
                       <CraftStyles.Card key={uuidv4()}>
-                        <CraftStyles.H3SectionTitle>
+                        <CraftStyles.H3SectionTitle className="text-left">
                           {normalizeString(craftItem.bundleType)}
                         </CraftStyles.H3SectionTitle>
                         <CraftStyles.StyledIconDiv className="icon">
@@ -137,7 +136,7 @@ const CraftingRotation = () => {
                             )}
                           </h3>
                         </CraftStyles.StyledIconDiv>
-                        <p>
+                        <p className="text-left">
                           Cost:{" "}
                           <span>
                             {craftItem.bundleContent[1].cost} materials

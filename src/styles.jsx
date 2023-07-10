@@ -38,14 +38,6 @@ export const StyledFooter = styled(motion.footer)`
 
 // navbar
 export const StyledNav = styled.nav`
-  /* min-height: 10vh;
-  display: flex;
-  margin: auto;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 10rem;
-  /* position: sticky; */
-  /* top: 0; */
   z-index: 10;
   font-family: "Bebas Neue", sans-serif;
   .line-mobile {
@@ -72,23 +64,6 @@ export const StyledNav = styled.nav`
     padding-left: 10rem;
     position: relative;
   }
-
-  /* @media (max-width: 1300px) {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    #logo {
-      display: inline-block;
-      margin: 2rem;
-    }
-    ul {
-      padding: 2rem;
-      justify-content: space-around;
-      width: 100%;
-      li {
-        padding: 0;
-      }
-    }
-  } */
 `;
 export const Line = styled(motion.div)`
   height: 0.3rem;

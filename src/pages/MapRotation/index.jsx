@@ -22,9 +22,9 @@ import { useScroll } from "../../components/UseScroll";
 
 // Animations
 import { pageAnimation, scrollReveal } from "../../animation";
+import { motion } from "framer-motion";
 
 const MapRotation = () => {
-  const [element, controls] = useScroll();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBrMapRotation());
@@ -117,51 +117,75 @@ const MapRotation = () => {
       initial="hidden"
       animate="show"
       exit="exit"
-      className="items-center justify-between block px-10 py-5 text-center lg:flex sm:mt-[-5%] mt-[-10%]"
+      className="flex items-center justify-between px-20 py-10"
     >
       {brMap.current ? (
         <>
           <NewsStyles.Description className="">
-            <h2 className={`${theme === "light" ? "text-gray-600" : ""}`}>
+            <h2 className={`${theme === "light" ? "text-gray-600" : ""} pb-20`}>
               Current BR map: <br />
               <span>{brMap.current.map}</span>
             </h2>
-            <MapStyles.Cards>
-              <MapStyles.Card>
-                <MapStyles.StyledIconDiv className="icon">
-                  <FontAwesomeIcon icon={faHourglassEnd} />
-                  <h3 style={{ width: "100px" }} className="text-xl">
+            <motion.div className="flex flex-col items-center justify-between md:flex-row xl:grid xl:grid-cols-2">
+              <motion.div className="flex flex-initial items-center justify-between w-[20rem]">
+                <motion.div className="flex items-center">
+                  <FontAwesomeIcon
+                    className="text-primary text-[3rem]"
+                    icon={faHourglassEnd}
+                  />
+                  <h3
+                    className={`${
+                      theme === "light" ? "text-gray-600" : ""
+                    } ml-4 text-xl   p-4 w-[90px]`}
+                  >
                     Ends in
                   </h3>
-                </MapStyles.StyledIconDiv>
+                </motion.div>
+
                 <p>
                   {`${timeLeft.hours}h:${timeLeft.minutes}m:${formatTime(
                     timeLeft.seconds
                   )}s`}
                 </p>
-              </MapStyles.Card>
-              <MapStyles.Card>
-                <MapStyles.StyledIconDiv className="icon">
-                  <FontAwesomeIcon icon={faMap} />
-                  <h3 style={{ width: "100px" }} className="text-xl">
+              </motion.div>
+              <motion.div className="flex flex-initial items-center justify-between w-[20rem]">
+                <motion.div className="flex items-center">
+                  <FontAwesomeIcon
+                    className="text-primary text-[3rem]"
+                    icon={faMap}
+                  />
+                  <h3
+                    className={`${
+                      theme === "light" ? "text-gray-600" : ""
+                    } ml-4 text-xl   p-4 w-[90px]`}
+                  >
                     Next Map
                   </h3>
-                </MapStyles.StyledIconDiv>
-                <p>{brMap.next.map}</p>
-              </MapStyles.Card>
-              <MapStyles.Card>
-                <MapStyles.StyledIconDiv className="icon">
-                  <FontAwesomeIcon icon={faClock} />
-                  <h3 style={{ width: "100px" }} className="text-xl">
+                </motion.div>
+                <p className="ml-2 text-[1.27rem] ">{brMap.next.map}</p>
+              </motion.div>
+              <motion.div className="flex flex-initial items-center justify-between w-[20rem]">
+                <motion.div className="flex items-center">
+                  <FontAwesomeIcon
+                    className="text-primary text-[3rem]"
+                    icon={faClock}
+                  />
+                  <h3
+                    className={`${
+                      theme === "light" ? "text-gray-600" : ""
+                    } ml-4 text-xl   p-4 w-[90px]`}
+                  >
                     Duration
                   </h3>
-                </MapStyles.StyledIconDiv>
-                <p>{brMap.current.DurationInMinutes} min</p>
-              </MapStyles.Card>
-            </MapStyles.Cards>
+                </motion.div>
+                <p className="w-[100px]">
+                  {brMap.current.DurationInMinutes} min
+                </p>
+              </motion.div>
+            </motion.div>
           </NewsStyles.Description>
-          <NewsStyles.Image className="xl:max-h-[65vh]">
-            <img src={mapImg} alt="" />
+          <NewsStyles.Image>
+            <img src={mapImg} alt="map pic" className="xlmax-w-[690px]" />
           </NewsStyles.Image>
           <div style={{ height: "40px" }}></div>
         </>
